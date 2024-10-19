@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Prediction Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .prediction {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cancer Prediction Input Form</h1>
+        <form action='/predict' method='post'>
+            <label for="diagnosis">Diagnosis:</label>
+            <input type="number" id="diagnosis" name="diagnosis" step="any" required>
+
+            <label for="radius">Radius:</label>
+            <input type="number" id="radius" name="radius" step="any" required>
+
+            <label for="texture">Texture:</label>
+            <input type="number" id="texture" name="texture" step="any" required>
+
+            <label for="perimeter">Perimeter:</label>
+            <input type="number" id="perimeter" name="perimeter" step="any" required>
+
+            <label for="area">Area:</label>
+            <input type="number" id="area" name="area" step="any" required>
+
+            <label for="smoothness">Smoothness:</label>
+            <input type="number" id="smoothness" name="smoothness" step="any" required>
+
+            <label for="compactness">Compactness:</label>
+            <input type="number" id="compactness" name="compactness" step="any" required>
+
+            <label for="concavity">Concavity:</label>
+            <input type="number" id="concavity" name="concavity" step="any" required>
+
+            <label for="concave_points">Concave Points:</label>
+            <input type="number" id="concave_points" name="concave_points" step="any" required>
+
+            <label for="symmetry">Symmetry:</label>
+            <input type="number" id="symmetry" name="symmetry" step="any" required>
+
+            <label for="fractal_dimension">Fractal Dimension:</label>
+            <input type="number" id="fractal_dimension" name="fractal_dimension" step="any" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+            <br>
+            <br>
+
+        {{ prediction }}
+    </div>
+</body>
+</html>
